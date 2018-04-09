@@ -1,16 +1,3 @@
-#Demo Git repository
+Hello This is my Personal repository:
 
-this is the first file.
-
-##IPSUM BELOW
-
-khhadkhaskdjhaskhdaskhdaskhdkj
-
-
-###IPSUM2
-
-lhadkldjaslkdjaskldj
-
-##website status
-
-index.html
+consisting, ansible playbooks, docker files,Lambda functions etc etc
