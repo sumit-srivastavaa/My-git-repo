@@ -1,0 +1,39 @@
+access key id: AKIAJYWOLRDNXPWFFBXQ
+secret access key: 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
+
+
+
+bucketname: sumlearningbucket
+
+for i in `ls -l | awk '{print $9}'`;do md5sum $i >> sum.txt;done
+file before: a981130cf2b7e09f4686dc273cf7187e
+file after: a981130cf2b7e09f4686dc273cf7187e
+
+
+ls -l | awk '{print $9}' | tail -44 #to output only part files
+
+
+
+
+
+
+
+
+md5sum backup.bk # take the value of md5sum somewhere
+split backup.bk -Csizeinbytes #this will create the multiple versions of that file 
+for i in `ls -l | awk '{print $9}'`;do md5sum $i >> sum.txt;done #to notedown md5sum of all the splitted files in one file for tracking the records
+for i in `ls -l | awk '{print $9}' | tail -44`;do aws s3 cp $i s3://sumlearningbucket;done #for uploading the multiple files (here i had 44 sub files so need to change the value of tail here manually)
+
+
+
+
+docker machine1 ip: 172.17.0.4
+docker machine3 ip: 172.17.0.3
+docker machine2 ip: 172.17.0.2
+
+
+docker image ls | awk '{print $3}' | tail -3 # to list images in docker 
+
+
+yum istall openssl -y
+service sshd start

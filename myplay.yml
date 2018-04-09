@@ -1,0 +1,39 @@
+-
+  name: Create a directory
+  hosts: all
+  tasks:
+    -       
+       file:
+            path: "~/ansible-test"
+            state: directory
+           
+-
+  name: Copy the script and run it 
+  hosts: all
+  become: yes 
+  tasks:
+    -
+      script: test.sh chdir= "~/ansible-test"
+    
+    -
+      name: start httpd service       
+      service:
+           name: sshd 
+           state: stopped
+     
+    -
+      name: run date command
+      command: date
+      register: date 
+    
+    - debug: var=date.stdout_lines
+
+
+-
+  name: Execute a command to display hosts file on localhost
+  hosts: all
+  tasks: 
+    -
+      lineinfile:
+           path: "~/ansible-test/test123"
+           line: 'my name is abc'
