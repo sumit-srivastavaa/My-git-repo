@@ -1,0 +1,90 @@
+###########incomplete student script##########
+
+for i in {1..10}; do echo "roll numbers"; read $i; echo $i >> roll_numbers; done
+  101  cat roll_numbers 
+  102  for i in {1..10}; do echo "enter english"; read $i; echo $i >> eng; done
+  103  for i in {1..10}; do echo "enter maths"; read $i; echo $i >> eng; done
+  104  for i in {1..10}; do echo "enter science"; read $i; echo $i >> eng; done
+  105  ls -lrth
+  106  paste -d ":" roll_number ":" maths ":" english ":" science
+  107  ls -lrth
+  108  for i in {1..10}; do echo "enter maths"; read $i; echo $i >> maths; done
+  109  for i in {1..10}; do echo "enter maths"; read $i; echo $i >> science; done
+  110  ls -lrth
+  111  paste -d ":" roll_number ":" maths ":" eng ":" science
+  112  paste -d ":" roll_numbers ":" maths ":" eng ":" science
+  113  cd ../../
+  114  ls -lrth
+  115  cat scriptr
+  116  cat script
+  117  cd -
+  118  ls -lrth
+  119  paste -d ":" roll_numbers maths eng science
+  120  paste -d " " roll_numbers maths eng science
+  121  paste -d " " roll_numbers maths eng science >> report
+  122  cat report | awk '{print $1}'
+  123  cat report | awk '{print $2}'
+  124  vi script.sh
+  125  history
+[root@localhost dir2]# 
+
+
+
+#!/bin/bash
+for i in {1..10}; do echo "roll numbers"; read $i; echo $i >> roll_numbers; done
+for i in {1..10}; do echo "enter english"; read $i; echo $i >> eng; done
+for i in {1..10}; do echo "enter maths"; read $i; echo $i >> maths; done
+for i in {1..10}; do echo "enter science"; read $i; echo $i >> science; done
+
+########### odd fizzbuzz script############
+
+echo "enter the limit till what you want to print"
+read num
+for ((i=1;i<=$num;i++));do echo $i >> pat;done
+for i in `pat`;do if (($i % 3 == 0)) && (($i % 5 == 0));then echo "fizz"; elif (($i % 5 == 0)); then echo "fizzbuzz"; else echo $i; fi; done
+cat /dev/null > pat
+
+
+#############palindrome##############
+
+echo "enter string"
+
+read str
+reverse_str=`echo $str | rev`
+if [ $reverse_str == $str ]
+then
+echo "it is a palindrome"
+else
+echo "it is not a palindrome"
+fi
+
+####### unsuccessful command for zombie killing########
+
+kill $(ps -A -ostat, ppid | awk '/[zZ]/{print $2}')
+
+
+###### Western union queue restart script########
+
+for i in MQ2 MQ6 XMQ
+do
+value=`wss -l $i | grep -i down`
+if [[ -n $value ]]
+then
+wss -r $i
+fi
+done
+
+
+##############recursive zip#################
+
+ls -l | grep "^d" | awk '{print $9}' > list.txt
+for i in `cat list.txt`;do cd $i; gzip -9v -f *.log;cd ..;done
+
+########multiple useradd###################
+
+ vi names
+for i in `cat names`; do useradd $i; done
+for i in `cat names`; do echo $i"Wa11street" | passwd --stdin "$i";chage -d 0; done
+
+
+#############################################

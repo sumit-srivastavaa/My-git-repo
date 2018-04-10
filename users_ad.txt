@@ -1,0 +1,1 @@
+dsget group CN="Cargill Inc Test 2 WebSuite,OU=Inc,OU=Groups,OU=Cargill,OU=Wallstreet Suite,DC=WSSASPAD02,DC=CORP" -members > C:\CargillWebSuite.txt
